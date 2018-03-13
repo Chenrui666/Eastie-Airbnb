@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>The Margins-Article</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/EastBoston_styles.css">
+  <link rel="stylesheet" href="css/mystyle.css">
+
+
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+  <script src="jquery.fullpage.js"></script>
+  <link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+
+
+
+</head>
+<body>
+  <script>
+    function LowIncome(){
+      document.getElementById("scatterplot").src="ScatterPlot-LI.html";
+    }
+    function ELL(){
+      document.getElementById("scatterplot").src="ScatterPlot-ELL.html";
+    }
+  </script>
+
+<!-- Hamburger menu
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <nav role="navigation" class="EastBoston_nav" >
+  <div id="menuToggle">
+    <!--
+    A fake / hidden checkbox is used as click reciever,
+    so you can use the :checked selector on it.
+    -->
+    <input type="checkbox" />
+
+    <!--
+    Some spans to act as a hamburger.
+    -->
+    <span></span>
+    <span></span>
+    <span></span>
+
+    <ul id="menu">
+        <a href="#"><li style="font-size:4rem">Article 1</li></a>
+        <a href="#"><li style="font-size:4rem">Article 2</li></a>
+        <a href="#"><li style="font-size:4rem">Article 3</li></a>
+        <a href="#"><li style="font-size:4rem">Article 4</li></a>
+        <a href="#"><li style="font-size:4rem">Article 5</li></a>
+        <a href="#"><li style="font-size:4rem">Article 6</li></a>
+
+    </ul>
+  </div>
+</nav>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div id="fullpage">
+  	<div class="section" id="section1">
+        <div class = "container">
+          <div class = "row">
+            <div class = "column EastBoston">
+              <div class = "transbox">
+              <h1 class="EastBoston_head">Is Airbnb taking over the East Boston?</h1>
+
+          <p>Airbnb is a website allowing owner renting thier rooms to others for a few nights. There are 4,870 listings rooms in Boston. 259 of them are located in East Boston whose average price is much higher than the normal rental house. Besides, 60.2% of these rooms are highly available (more than 60 days per year) year-round for tourists, probably don't have the owner present, could be illegal, and more importantly, are displacing residents.
+          </p>
+            <h5 class="EastBoston_byline">By Chenrui Ye</h5>
+            </div>
+            </div>
+          </div>
+        </div>
+
+
+    </div>
+  	<div class="section" id="section2">
+
+        <div>
+          <h2 class="EastBoston_head">The location, room type and price of Airbnb rooms in East Boston.</h2>
+        </div>
+
+      <iframe  src="map.html" width=600 height="600" scrolling ="no"></iframe>
+
+    </div>
+  	<div class="section" id="section3">
+      <div class = "container">
+      </br>
+      </br>
+
+        <h2 class="EastBoston_head">How about the normal rent price and the hotel price per night?</h2>
+        <iframe  src="Barchart.html" width=980 height=500 scrolling ="no"></iframe>
+
+      </div>
+
+    </div>
+    <div class="section" id="section4">
+      <div class = "container">
+      </br>
+      </br>
+
+        <h2 class="EastBoston_head">The percentage of availability and listings per host.</h2>
+        <iframe id= "scatterplot" src="ScatterPlot.html" width=980 height=530 scrolling ="no"></iframe>
+
+        <!-- <h6 class="EastBoston_footer"><span class="EastBoston_footer">Visualizing Eastie</span> is a project of the <a href="https://www.northeastern.edu/visualization/">Information Design and Visualization program</a> at Northeastern University. © 2018</h6> -->
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+  $(document).ready(function(){
+    $('#fullpage').fullpage();
+
+
+  });
+  </script>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

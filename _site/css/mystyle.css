@@ -1,0 +1,14 @@
+#section1{
+  background-image: url(/images/bg.png);
+
+}
+div.transbox
+{
+  width: 100%;
+  height: auto;
+  background-color: #ffffff;
+  /* for IE */
+  filter:alpha(opacity=60);
+  /* CSS3 standard */
+  opacity:0.6;
+}
