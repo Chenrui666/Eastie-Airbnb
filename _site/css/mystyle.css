@@ -1,5 +1,5 @@
 #section1{
-  background-image: url(/images/bg.png);
+  background-image: url(/images/bg.jpg);
 
 }
 div.transbox
@@ -28,4 +28,15 @@ div.transbox
   pointer-events: none;
   background-color:white;
   /* background-color: #5bcaff; */
+}
+
+
+# contentInside2 {
+   width:350px;
+    float:left;
+    padding:10px;
+}
+
+# mapInside2 {
+    float:right;
 }
