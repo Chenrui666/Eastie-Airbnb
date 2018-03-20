@@ -14,9 +14,9 @@ var svg = d3.select("svg"),
     g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 var x0 = d3.scaleBand()
     .rangeRound([30, width])
-    .paddingInner(0.5);
+    .paddingInner(0.1);
 var x1 = d3.scaleBand()
-    .padding(0.15);
+    .padding(0.25);
 var y = d3.scaleLinear()
     .rangeRound([height, 0]);
 var z = d3.scaleOrdinal()

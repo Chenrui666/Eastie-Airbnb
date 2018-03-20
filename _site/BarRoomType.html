@@ -4,7 +4,7 @@
   display: none;
 }
 </style>
-<svg width="960" height="500"></svg>
+<svg width="500" height="500"></svg>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
 var svg = d3.select("svg"),
@@ -20,8 +20,8 @@ var x1 = d3.scaleBand()
 var y = d3.scaleLinear()
     .rangeRound([height, 0]);
 var z = d3.scaleOrdinal()
-    .range(["#feaa64", "#5bcaff", "#01a7fb"]);
-d3.csv("BarData.csv", function(d, i, columns) {
+    .range(["#feaa64", "#5bcaff", "#28B7C8"]);
+d3.csv("RoomType.csv", function(d, i, columns) {
   for (var i = 1, n = columns.length; i < n; ++i) d[columns[i]] = +d[columns[i]];
   return d;
 }, function(error, data) {
@@ -39,9 +39,17 @@ d3.csv("BarData.csv", function(d, i, columns) {
     .data(function(d) { return keys.map(function(key) { return {key: key, value: d[key]}; }); })
     .enter().append("rect")
       .attr("x", function(d) { return x1(d.key); })
-      .attr("y", function(d) { return y(d.value); })
+      .attr("y", function(d) {
+        if (d.value <= 10) return y(d.value)-3;
+
+        else
+        return y(d.value); })
       .attr("width", x1.bandwidth())
-      .attr("height", function(d) { return height - y(d.value); })
+      .attr("height", function(d) {
+        if (d.value <= 10) return "3";
+
+        else
+        return height - y(d.value); })
       .attr("fill", function(d) { return z(d.key); });
     // svg.selectAll("rect")
     // .enter().append("text")
@@ -76,7 +84,7 @@ d3.csv("BarData.csv", function(d, i, columns) {
       .attr("fill", "#000")
       .attr("font-weight", "bold")
       .attr("text-anchor", "start")
-      .text("Prices($)");
+      .text("Count");
   var legend = g.append("g")
       .attr("font-family", "sans-serif")
       .attr("font-size", 10)

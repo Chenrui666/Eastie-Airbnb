@@ -36,18 +36,7 @@
   <script src="jquery.fullPage.js"></script>
   <link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
   <!-- <script src="https://d3js.org/d3.v3.min.js"></script> -->
-  <script type="text/javascript">
-		$(document).ready(function() {
-			$('#fullpage').fullpage({
-				anchors: ['firstPage', 'secondPage', 'thirdPage','fourthPage'],
-				// sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
-				navigation: true,
-				navigationPosition: 'right',
-				// navigationTooltips: ['First', 'Second', 'Third','Fourth'],
-        navigationColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
-			});
-		});
-	</script>
+
 
 
 
@@ -98,13 +87,13 @@
         <div class = "container">
           <div class = "row">
             <div class = "column EastBoston">
-              <div class = "transbox">
-              <h1 class="EastBoston_head">Is Airbnb taking over the East Boston?</h1>
+              <!-- <div class = "transbox"> -->
+                <h1 class="EastBoston_head">Is Airbnb contributing to higher rents?</h1>
 
-          <p>Airbnb is a website allowing owner renting thier rooms to others for a few nights. There are 4,870 listings rooms in Boston. 259 of them are located in East Boston whose average price is much higher than the normal rental house. Besides, 60.2% of these rooms are highly available (more than 60 days per year) year-round for tourists, probably don't have the owner present, could be illegal, and more importantly, are displacing residents.
-          </p>
-            <h5 class="EastBoston_byline">By Chenrui Ye</h5>
-            </div>
+                <p>Airbnb is a website allowing owners to rent rooms and entire homes. While not as popular with tourists as neighborhoods like Back Bay, East Boston has an increasing number of listings. Of the 4,870 units advertised in Boston, 259 of them are located in East Boston. Critics say that landlords are taking properties off of the market because they can get much higher fees from Airbnb than they would from comparable rents. The large number of listings that are available for significant parts of the year seems to confirm that trend. A new measure proposed by Boston Mayor Marty Walsh would limit the number of days per year that a property could be listed on Airbnb.
+                </p>
+                <h5 class="EastBoston_byline">By Chenrui Ye</h5>
+              <!-- </div> -->
             </div>
           </div>
         </div>
@@ -117,6 +106,8 @@
           <div class = "column EastBoston"> -->
           <div id="contentInside2">
             <h2 class="EastBoston_head">The location, room type and price of Airbnb rooms in East Boston.</h2>
+            <iframe  src="BarRoomType.html" width=500 height=500 scrolling ="no"></iframe>
+
           </div>
           <div id="mapInside2">
             <iframe  src="map.html" width=600 height="600" scrolling ="no"></iframe>
@@ -133,7 +124,7 @@
       </br>
 
         <h2 class="EastBoston_head">How about the normal rent price and the hotel price per night?</h2>
-        <iframe  src="Barchart.html" width=980 height=500 scrolling ="no"></iframe>
+        <iframe  src="Barchart.html" width=960 height=500 scrolling ="no"></iframe>
 
       </div>
 
@@ -145,7 +136,7 @@
 
         <h2 class="EastBoston_head">The percentage of availability and listings per host.</h2>
           <!-- <script src="scatterplot.js"></script> -->
-        <iframe id= "scatterplot" src="ScatterPlot.html" width=980 height=530 scrolling ="no"></iframe>
+        <iframe id= "scatterplot" src="ScatterPlot.html" width=960 height=500 scrolling ="no"></iframe>
 
         <h6 class="EastBoston_footer"><span class="EastBoston_footer">Visualizing Eastie</span> is a project of the <a href="https://www.northeastern.edu/visualization/">Information Design and Visualization program</a> at Northeastern University. © 2018</h6>
       </div>
@@ -153,6 +144,19 @@
     </div>
 
   </div>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#fullpage').fullpage({
+        anchors: ['firstPage', 'secondPage', 'thirdPage','fourthPage'],
+        // sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
+        navigation: true,
+        navigationPosition: 'right',
+        // navigationTooltips: ['First', 'Second', 'Third','Fourth'],
+        navigationColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
+      });
+    });
+  </script>
 
   <!-- <script>
   $(document).ready(function(){

@@ -32,14 +32,15 @@ body {
 <script>
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    height = 460 - margin.top - margin.bottom;
 
 
 // setup x
 var xValue = function(d) { return d.availability_365;}, // data -> value
     xScale = d3.scale.linear().range([0, width]), // value -> display
     xMap = function(d) { return xScale(xValue(d));}, // data -> display
-    xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+    xAxis = d3.svg.axis().scale(xScale).orient("bottom")
+            .tickValues([0,30,60,90,120,150,180,210,240,270,300,330]);
 
 // setup y
 var yValue = function(d) { return d["ListingCount"];}, // data -> value
@@ -83,7 +84,7 @@ d3.csv("listings - Eastie.csv", function(error, data) {
       .attr("x", width)
       .attr("y", 30)
       .style("text-anchor", "end")
-      .text("availability_365");
+      .text("Available Days");
 
   // y-axis
   svg.append("g")
@@ -126,6 +127,22 @@ d3.csv("listings - Eastie.csv", function(error, data) {
                .style("opacity", 0);
       });
 
+
+      svg.append("line")
+        .attr("class", "limitLine")
+        .attr("x1", xScale(90))
+        .attr("y1", yScale(0))
+        .attr("x2", xScale(90))
+        .attr("y2", yScale(15))
+        .attr("stroke", "lightgrey")
+        .attr("stroke-dasharray", "10,5")
+        .attr("stroke-width","1px")
+
+      svg.append("text")
+      .attr("class", "limitLine")
+      .attr("x", xScale(92))
+      .attr("y", yScale(14))
+      .text("Mayor Walsh's proposed rule")
 
 
 });
