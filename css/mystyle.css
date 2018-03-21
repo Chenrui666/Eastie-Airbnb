@@ -1,5 +1,5 @@
 #section1{
-  background-image: url(/images/bg.jpg);
+  background-image: url(/Eastie-Airbnb/images/bg.jpg);
 
 }
 div.transbox
@@ -33,11 +33,15 @@ div.transbox
 
 
 #contentInside2 {
-   width:350px;
-    float:right;
-    padding:10px;
+   width:600px;
+    /* float:right; */
+    display: inline-block;
+
 }
 
 #mapInside2 {
-    float:left;
+    /* float:left; */
+display: inline-block;
+margin-top: 50px;
+
 }

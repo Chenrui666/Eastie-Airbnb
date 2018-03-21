@@ -149,9 +149,9 @@
             //design
             controlArrows: true,
             controlArrowColor: '#fff',
-            verticalCentered: true,
+            verticalCentered: false,
             sectionsColor : [],
-            paddingTop: 0,
+            paddingTop: '55px',
             paddingBottom: 0,
             fixedElements: null,
             responsive: 0, //backwards compabitility with responsiveWiddth
@@ -1042,7 +1042,7 @@
 
             lastScroll = currentScroll;
 
-            //needed for auto-height sections to determine if we want to scroll to the top or bottom of the destination
+            //needed for auto- sections to determine if we want to scroll to the top or bottom of the destination
             previousDestTop = currentScroll;
 
             return direction;

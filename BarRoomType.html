@@ -21,6 +21,8 @@ var y = d3.scaleLinear()
     .rangeRound([height, 0]);
 var z = d3.scaleOrdinal()
     .range(["#feaa64", "#5bcaff", "#28B7C8"]);
+
+var colors = {"Entire House/Apt":"#feaa64","Private Room":"#5bcaff","Shared Room":"#30D9BA"};
 d3.csv("RoomType.csv", function(d, i, columns) {
   for (var i = 1, n = columns.length; i < n; ++i) d[columns[i]] = +d[columns[i]];
   return d;
@@ -50,7 +52,7 @@ d3.csv("RoomType.csv", function(d, i, columns) {
 
         else
         return height - y(d.value); })
-      .attr("fill", function(d) { return z(d.key); });
+      .attr("fill", function(d) { console.log(d.key);return colors[d.key]; });
     // svg.selectAll("rect")
     // .enter().append("text")
     // .attr("x", function(d) { return x1(d.key);  })
@@ -97,7 +99,7 @@ d3.csv("RoomType.csv", function(d, i, columns) {
       .attr("x", width - 30)
       .attr("width", 24)
       .attr("height", 24)
-      .attr("fill", z);
+      .attr("fill", function(d) { console.log(d); return colors[d]; });
   legend.append("text")
       .attr("x", width - 36)
       .attr("y", 12)

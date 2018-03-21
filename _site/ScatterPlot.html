@@ -109,7 +109,10 @@ d3.csv("listings - Eastie.csv", function(error, data) {
       .attr("r", 5)
       .attr("cx", xMap)
       .attr("cy", yMap)
-      .style("stroke", "#01a7fb")
+      .style("stroke", function(d){
+        if (d.availability_365 <= 90) return "#01a7fb";
+        else return "red"
+      })
       .style("fill","none")
       // .style("fill", function(d) { return color(cValue(d));})
       .on("mouseover", function(d) {
@@ -142,7 +145,7 @@ d3.csv("listings - Eastie.csv", function(error, data) {
       .attr("class", "limitLine")
       .attr("x", xScale(92))
       .attr("y", yScale(14))
-      .text("Mayor Walsh's proposed rule")
+      .text("Mayor Walsh's proposed rule of restricted short-term rentals to 90 days annually.")
 
 
 });

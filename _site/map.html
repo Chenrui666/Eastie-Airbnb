@@ -12,6 +12,8 @@
 
 <!-- <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script> -->
 <script src="leaflet.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
 
 <style>
 #map {
@@ -34,7 +36,7 @@
     });
 
 
-    L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
+    L.tileLayer('http://tiles.mapc.org/basemap/{z}/{x}/{y}.png', {
     // attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
@@ -66,15 +68,33 @@
         }
         // alert(lines);
         // console.log(lines);
+        var colors = {"Entire home/apt":"#feaa64","Private room":"#5bcaff","Shared room":"#30D9BA"};
+        // var circleScale = d3.scale.sqrt().domain([0, 10]).range([0, 250]);
+        // var myRadius = function (){circleScale(lines[i][9])
+        //
+        // };
+
         for (var i = 0; i < lines.length; i++) {
-        			marker = new L.circleMarker([lines[i][6],lines[i][7]])
-        				// .bindPopup(lines[i][0])
+            console.log(lines[i][8]);
+            console.log(colors[lines[i][8]]);
+        			marker = new L.circleMarker([lines[i][6],lines[i][7]],
+                {
+                  color: colors[lines[i][8]],
+                  radius: lines[i][9]/20,
+                  opacity: 1,
+                  fillOpacity: 0.6
+
+
+
+                }
+              )
+        				.bindPopup(lines[i][8] + ", $"+ lines[i][9]+ " per night")
         				.addTo(map);
         }
 
     }
 
-    
+
 
 </script>
 
