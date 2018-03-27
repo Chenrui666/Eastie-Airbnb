@@ -31,6 +31,9 @@ div.transbox
   /* background-color: #5bcaff; */
 }
 
+.grid-container {
+  display: grid
+}
 
 #contentInside2 {
    width:600px;

@@ -5,7 +5,7 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>The Margins-Article</title>
+  <title>Is Airbnb contributing to higher rents?</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -42,43 +42,46 @@
 
 </head>
 <body>
-  <script>
-    function LowIncome(){
-      document.getElementById("scatterplot").src="ScatterPlot-LI.html";
-    }
-    function ELL(){
-      document.getElementById("scatterplot").src="ScatterPlot-ELL.html";
-    }
-  </script>
+  <!-- Custom Fonts -->
+  <style>
+  @font-face {
+   font-family: "GrifoL-Bold";
+    src: url(https://web.northeastern.edu/visualizingeastie/fonts/Grifo-L-Bold.otf);
+  }
+      body {font-family: "GrifoL-Bold","Georgia",serif}
+  @font-face {
+   font-family: "BentonSansCond-Bold";
+    src: url(https://web.northeastern.edu/visualizingeastie/fonts/BentonSansCond-Bold.otf);
+  }
+      body {font-family: "BentonSansCond-Bold","Helvetica",sans-serif}
+  </style>
 
-<!-- Hamburger menu
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <nav role="navigation" class="EastBoston_nav" >
-  <div id="menuToggle">
-    <!--
-    A fake / hidden checkbox is used as click reciever,
-    so you can use the :checked selector on it.
-    -->
-    <input type="checkbox" />
+  <!-- Hamburger menu
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+      <nav role="navigation" class="EastBoston_nav" >
+    <div id="menuToggle">
+      <!--
+      A fake / hidden checkbox is used as click reciever,
+      so you can use the :checked selector on it.
+      -->
+      <input type="checkbox" />
 
-    <!--
-    Some spans to act as a hamburger.
-    -->
-    <span></span>
-    <span></span>
-    <span></span>
+      <!--
+      Some spans to act as a hamburger.
+      -->
+      <span></span>
+      <span></span>
+      <span></span>
 
-    <ul id="menu">
-        <a href="#"><li style="font-size:4rem">Article 1</li></a>
-        <a href="#"><li style="font-size:4rem">Article 2</li></a>
-        <a href="#"><li style="font-size:4rem">Article 3</li></a>
-        <a href="#"><li style="font-size:4rem">Article 4</li></a>
-        <a href="#"><li style="font-size:4rem">Article 5</li></a>
-        <a href="#"><li style="font-size:4rem">Article 6</li></a>
-
-    </ul>
-  </div>
-</nav>
+      <ul id="menu" >
+          <a href="https://web.northeastern.edu/visualizingeastie" ><li style="font-size: 3rem; line-height: 3rem">All stories</li></a>
+          <a href="https://web.northeastern.edu/visualizingeastie/the-people" ><li style="font-size: 3rem; line-height: 3rem">The people</li></a>
+          <a href="https://web.northeastern.edu/visualizingeastie/the-environment "><li style="font-size: 3rem; line-height: 3rem">The environment</li></a>
+          <a href="https://web.northeastern.edu/visualizingeastie/the-built-city"><li style="font-size: 3rem; line-height: 3rem">The built city</li></a>
+          <a href="https://web.northeastern.edu/visualizingeastie/the-institutions"><li style="font-size: 3rem; line-height: 3rem">The institutions</li></a>
+      </ul>
+      </div>
+  </nav>
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -133,16 +136,22 @@
     </div>
     <div class="section" id="section4">
       <div class = "container">
-        </br>
-        </br>
+      </br>
+          <h2 class="EastBoston_head">The availability of the rooms and listings per host in East Boston.</h2>
 
-        <h2 class="EastBoston_head">The availability of the rooms and listings per host in East Boston.</h2>
-        <p>*Move your mouse over the dots to see the specific available days.</p>
+          <div class = "row">
+            <div class = "column EastBoston">
+
+              <p>*Move your mouse over the dots to see the specific available days.</p>
+
+            </div>
+          </div>
           <!-- <script src="scatterplot.js"></script> -->
-        <iframe id= "scatterplot" src="ScatterPlot.html" width=960 height=500 scrolling ="no"></iframe>
+          <iframe id= "scatterplot" src="ScatterPlot.html" width=960 height=440 scrolling ="no"></iframe>
 
       </div>
         <h6 class="EastBoston_footer"><span class="EastBoston_footer">Visualizing Eastie</span> is a project of the <a href="https://www.northeastern.edu/visualization/">Information Design and Visualization program</a> at Northeastern University. © 2018</h6>
+
 
     </div>
 
